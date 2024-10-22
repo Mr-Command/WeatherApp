@@ -1,0 +1,102 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d"
+        Title="Weather App" Height="650" Width="1200">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox x:Name="cmbCities" 
+              Grid.Row="0" 
+              Margin="0,0,0,15"
+              Height="40"
+              Padding="10"
+              Background="#E0F7FA"
+              Foreground="Black"
+              BorderThickness="0"
+              MaxDropDownHeight="160"
+              StaysOpenOnEdit="False"
+              IsEditable="False"/>
+
+        <Button x:Name="btnGetWeather"
+            Grid.Row="1"
+            Content="Hava Durumunu Getir"
+            Height="40"
+            Margin="0,0,0,15"
+            Background="#26A69A"
+            Foreground="White"
+            FontWeight="Bold"
+            BorderThickness="0"
+            Click="btnGetWeather_Click"/>
+
+        <ProgressBar x:Name="progressBar"
+                 Grid.Row="1"
+                 Height="3"
+                 Margin="0,45,0,0"
+                 IsIndeterminate="True"
+                 Visibility="Collapsed"
+                 Background="#B2DFDB"
+                 Foreground="#004D40"
+                 Opacity="0.8"/>
+
+        <Border Grid.Row="2"
+            Background="White"
+            BorderBrush="LightGray"
+            BorderThickness="1"
+            Padding="15">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center"
+                        Margin="0,0,0,15">
+                    <Image x:Name="weatherIcon"
+                       Width="60"
+                       Height="60"
+                       RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock x:Name="txtTemperature"
+                           FontSize="36"
+                           VerticalAlignment="Center"
+                           Foreground="#00796B"
+                           Margin="10,0"/>
+                </StackPanel>
+
+                <TextBlock x:Name="txtDescription"
+                       FontSize="22"
+                       Foreground="#004D40"
+                       TextAlignment="Center"
+                       Margin="0,0,0,25"/>
+
+                <TextBlock x:Name="txtFeelsLike"
+                       FontSize="16"
+                       Foreground="#004D40"
+                       Margin="0,5"/>
+
+                <TextBlock x:Name="txtHumidity"
+                       FontSize="16"
+                       Foreground="#004D40"
+                       Margin="0,5"/>
+
+                <TextBlock x:Name="txtWind"
+                       FontSize="16"
+                       Foreground="#004D40"
+                       Margin="0,5"/>
+
+                <TextBlock x:Name="txtPressure"
+                       FontSize="16"
+                       Foreground="#004D40"
+                       Margin="0,5"/>
+
+                <TextBlock x:Name="txtVisibility"
+                       FontSize="16"
+                       Foreground="#004D40"
+                       Margin="0,5"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
